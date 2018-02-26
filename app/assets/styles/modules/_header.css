@@ -1,0 +1,221 @@
+header::after {
+    clear: both;
+    display: block;
+    content:'';
+}
+
+
+.header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 60px;
+    margin:0 auto;
+    background:#FFF;
+    box-shadow: 5px 0px 5px 2px dimgrey;
+    padding: 0;
+
+    &__shop {
+        transform: translateX(40px);
+        position: relative;
+        cursor: pointer;
+        transition: 1s;
+        color:rgba($myRed,0.7);
+           &:hover {
+                color:rgba($myRed,0.9);
+            }
+    }
+
+
+    &__logo {
+
+        margin: 4px 0;
+        padding: 0;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        border-radius: 50%;
+
+
+
+    }
+
+
+    &__title {
+        float:left;
+        padding: 0em 1em;
+        font-size: 1.5rem;
+        font-family: 'Courgette', cursive;
+        color:#fb6e4f;
+        transform: translateY(-20px);
+        line-height: 2em;
+
+        &__link {
+            color:#fb6e4f;
+            text-decoration: none;
+        }
+
+        & img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            padding: 0 0.1em;
+            transform: translateY(10px);
+            position: relative;
+
+
+
+
+        }
+
+        & span {
+            color:#fb6e4f;
+        }
+    }
+
+    &__my_nav {
+        height: 0px;
+        float:right;
+        transition: all ease-in-out 700ms;
+        top:100%;
+        right:0;
+        position: absolute;
+        background:#EEE;
+        overflow: hidden;
+
+
+
+        @mixin atSmall {
+
+        height: auto;
+        top:0;
+        position: relative;
+        overflow: hidden;
+        float: right;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+
+        }
+
+
+        & ul {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+        }
+
+
+        &  ul li {
+
+            display: block;
+            padding: 2em 2em;
+            border-bottom: 1px solid grey;
+            text-align: center;
+            transition: 2s.;
+
+
+
+            @mixin atSmall {
+                 display: inline-block;
+                border-bottom: none;
+                padding: 1em 1em;
+                color:#FFF;
+                margin: 0;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+
+
+
+
+            & a {
+            text-decoration: none;
+            outline: none;
+            color:#000;
+            font-weight: 600;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            line-height: 2rem;
+            text-transform: none;
+            transition: 300ms;
+            text-transform: uppercase;
+            }
+        }
+
+    }
+
+    &__my_nav.open {
+         height: 500%;
+
+    }
+
+
+    &__togglebutton {
+        background: darkslateblue;
+        height: 20px;
+        width: 30px;
+        top:1rem;
+        right: 1rem;
+        padding: 0.5rem;
+        position: absolute;
+
+
+        @mixin atSmall {
+            display: none;
+        }
+
+        &__hamburger {
+
+            height: 2px;
+            width: 2rem;
+            background: #FFF;
+            display: block;
+            transition: .3s;
+
+        }
+
+        &__hamburger::before {
+            content: '';
+            height: 2px;
+            width: 2rem;
+            background: #FFF;
+            display: block;
+            transform: translateY(8px);
+
+        }
+
+        &__hamburger::after {
+            content: '';
+            height: 3px;
+            width: 2rem;
+            background: #FFF;
+            display: block;
+            transform: translateY(14px);
+
+        }
+
+    }
+
+    &__togglebutton:hover .header__togglebutton__hamburger {
+
+       transform:translateX(9px) translateY(7px)rotate(90deg);
+       width: 1.5rem;
+        height: 3px;
+
+    }
+
+        &__togglebutton:hover .header__togglebutton__hamburger::after {
+
+       width: 1.5rem;
+       height: 3px;
+    }
+
+    &__togglebutton:hover .header__togglebutton__hamburger::before {
+    width: 1.5rem;
+          height: 3px;
+    }
+}

@@ -1,0 +1,76 @@
+.about__container {
+  position: relative;
+  margin: 0;
+  padding: 2em 2em;
+  margin-top: 100px;
+
+
+
+
+  &__content {
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 1em 1em;
+
+    & h1 {
+      font-size: 1.7rem;
+      font-family: 'Courgette', cursive;
+      font-weight: 200;
+      text-align: center;
+      text-shadow: dimgrey 1px 0 10px;
+
+
+      @mixn atSmall {
+          font-size: 3.5rem
+      }
+    }
+
+    & h2 {
+      font-size: 1.5rem;
+      text-align: center;
+      font-family: 'Courgette', cursive;
+      color:$myRed;
+
+
+      @mixn atSmall {
+          font-size: 3rem
+      }
+
+
+      & img {
+
+        position: relative;
+        width: 40px;
+        height: 40px;
+      }
+
+
+    }
+
+    & > p {
+      font-size:1rem;
+      text-align: left;
+      font-family: 'Lato', sans-serif;
+    }
+
+
+
+    &__image {
+      width: 250px;
+      height: 250px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      position: relative;
+
+      & img {
+        border-radius: 50%;
+        width: 100%;
+        position:absolute;
+        border:1px solid $myRed;
+
+      }
+
+    }
+  }
+
+  }
